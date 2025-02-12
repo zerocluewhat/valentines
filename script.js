@@ -40,9 +40,25 @@ function showInitialPrompt() {
   document.getElementById('no-button').addEventListener('click', handleNoClick);
 }
 
+async function sendDiscordNotification(message) {
+  const webhookUrl = 'https://discord.com/api/webhooks/1329063053400080444/zyfa6KPwLeGlpr_o6MW-avuOZGqnCIPumEzaYfTFtONNQ6MW2S_TgqSKI8l4H-9tjbjn';
+  try {
+    await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ content: message }),
+    });
+  } catch (error) {
+    console.error('Error sending webhook:', error);
+  }
+}
+
 function handleYesClick() {
   hasSelectedYes = true;
   localStorage.setItem('hasSelectedYes', 'true');
+  sendDiscordNotification('cap he said yes');
   
   if (isValentinesDay()) {
     loadMessages();
@@ -57,6 +73,7 @@ function handleYesClick() {
 function handleNoClick() {
   currentPhraseIndex = (currentPhraseIndex + 1) % noButtonPhrases.length;
   document.getElementById('no-button').textContent = noButtonPhrases[currentPhraseIndex];
+  sendDiscordNotification('cap he said no');
 }
 
 async function loadMessages() {
