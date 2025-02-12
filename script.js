@@ -4,14 +4,14 @@ let currentIndex = 0;
 let hasSelectedYes = false;
 
 const noButtonPhrases = [
-  "Please say yes 🥺",
-  "Are you sure? 😢",
-  "Pretty please? 💕",
-  "I'll be so sad if you don't 😭",
+  "Please say yes Atlas! 🥺",
+  "Are you sure baby boy? 😢",
+  "Pretty please my prince? 💕",
+  "PLEASEEEEEE 😭",
   "Pookie please! 😘",
-  "darling i love you so so much please i am begging",
-  "Give it another thought! 🌹",
-  "Don't break my heart 💔"
+  "Darling I love you so so much please i am begging!",
+  "SYMPATHY please? 🌹",
+  "you are my stars, pleaseee 💔"
 ];
 let currentPhraseIndex = 0;
 
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       document.querySelector('.letter-container').innerHTML = `
         <img src="valentines.gif" alt="Valentine's Day" style="max-width: 300px; margin-bottom: 20px;">
-        <h1>You can't open the letter until Valentine's Day! ❤️</h1>
+        <h1>Thank you for saying Yes my love! You can't open the letter until Valentine's Day but for now I'm happy to give you all the love I can in our messages! We'll be together soon ❤️ </h1>
       `;
     }
   } else {
